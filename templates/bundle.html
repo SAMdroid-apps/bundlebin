@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block title %}{{ name }} on Bundlebin{% endblock %}
+
+{% block body %}
+<h1>{{ name }}</h1>
+
+{% if icon is not none %}
+<img src="data:image/svg+xml;base64,{{ icon }}" alt="{{ name }} icon"/>
+{% endif %}
+
+{% if summary is not none %}
+<p><i>{{ summary }}</i></p>
+{% endif %}
+{% if version is not none %}
+<p>Version {{ version }}</p>
+{% endif %}
+
+<p><a href="{{ url }}">Download!</a></p>
+{% endblock %}

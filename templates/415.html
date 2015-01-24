@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block title %}415 Bundlebin{% endblock %}
+
+{% block body %}
+<h1 class="error">415 UNSUPPORTED MEDIA TYPE</h1>
+
+<p>Your bundle was rejected because it was not a valid XO file.  Your XO
+   file must have a <code>activity/activity.info</code> file with a
+   <code>name</code> and <code>bundle_id</code> parameter.</p>
+{% endblock %}
