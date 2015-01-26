@@ -6,7 +6,8 @@
 <h1>{{ name }}</h1>
 
 {% if icon is not none %}
-<img src="data:image/svg+xml;base64,{{ icon }}" alt="{{ name }} icon"/>
+<img src="data:image/svg+xml;base64,{{ icon }}" alt="{{ name }} icon"
+     class="icon"/>
 {% endif %}
 
 {% if summary is not none %}
@@ -16,5 +17,5 @@
 <p>Version {{ version }}</p>
 {% endif %}
 
-<p><a href="{{ url }}">Download!</a></p>
+<p><a href="{{ url }}" class="cool-button download">Download!</a></p>
 {% endblock %}

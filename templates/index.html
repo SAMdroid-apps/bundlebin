@@ -2,23 +2,27 @@
 <html>
 <head>
     <title>{% block title %}Bundlebin{% endblock %}</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <a href="/"><img src="{{ url_for('static', filename='logo.svg') }}" /></a>
-    <br />
+<div class="content">
+    <a href="/">
+        <img src="{{ url_for('static', filename='logo.svg') }}"
+             class="header"/>
+    </a>
+    <br/>
 
     {% block body %}
-    <b class="upload">Upload A Bundle</b>
-
     <form action="upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
-        <br /><br />
-        <input type="submit" value="Upload">
+        <br/><br/>
+        <input type="submit" value="Upload" class="cool-button">
     </form>
 
     <p>The Bundlebin is an easy to share activity bundles with others.
        Simpily upload the bundle and you will recieve a link that you can share
        with your friends.  The bundles will be deleted after 12 hours</p>
     {% endblock %}
+</div>
 </body>
 </html>
