@@ -156,4 +156,4 @@ def page_not_found(e):
 if __name__ == '__main__':
     app.config.from_envvar('BUNDLEBIN_SETTINGS')
     setup_db(app.config['DB_FILE'])
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
