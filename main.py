@@ -13,10 +13,10 @@ import dataset
 
 
 app = Flask(__name__)
+app.config['DB_FILE'] = 'sqlite:///data/data.db'
 app.config['UPLOAD_FOLDER'] = 'data/uploads/'
 app.config['DELETE_AFTER'] = 12 * 60 * 60
 app.config['MIRROR_ROOT'] = 'https://download.sugarlabs.org/activities2/'
-
 
 def vaild_bundle(zip_):
     if len(zip_.namelist()) == 0:
@@ -154,5 +154,6 @@ def page_not_found(e):
     return render_template('415.html'), 415
 
 if __name__ == '__main__':
-    setup_db('sqlite:///data/data.db')
+    app.config.from_envvar('BUNDLEBIN_SETTINGS')
+    setup_db(app.config['DB_FILE'])
     app.run(debug=True)
