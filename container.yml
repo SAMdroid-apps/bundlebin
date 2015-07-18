@@ -1,0 +1,7 @@
+volumes:
+ - /srv/socialhelp/bundlebin_data:/data
+ports:
+  - 5000:5000
+
+memory: 200m
+cpu: 10

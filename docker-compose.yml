@@ -1,7 +1,0 @@
-bundlebin:
-  build: .
-  volumes:
-   - "/srv/socialhelp/bundlebin_data:/data"
-  ports:
-    - "5000:5000"
-  mem_limit: 200m
